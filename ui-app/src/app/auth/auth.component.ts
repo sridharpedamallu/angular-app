@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { ValidatorFn, AbstractControl, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
+
+interface ILoginForm {
+  email: string;
+  password: string;
+}
 
 @Component({
   selector: 'app-auth',
@@ -7,9 +14,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthComponent implements OnInit {
 
-  constructor() { }
+  loginForm: FormGroup;
+
+  constructor(
+    private fb: FormBuilder
+  ) { }
 
   ngOnInit(): void {
+
+    this.loginForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.compose([Validators.required])]
+    });
+
   }
 
 }
