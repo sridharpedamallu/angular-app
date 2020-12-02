@@ -1,46 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-primary">
-  <a class="navbar-brand" href="#">A-App</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <ul class="navbar-nav mr-auto"></ul>
 
-</nav>
+<app-header *ngIf="isAuth()"></app-header>
 
-<nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
-  <div class="collapse navbar-collapse" id="navbarColor01">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link text-white" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-white" href="#">Courses <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-white" href="#">Students <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-white" routerLink="admin">Admin <span class="sr-only">(current)</span></a>
-      </li>
-
-    </ul>
-    <span>
-      <a class="btn btn-outline-primary btn-sm m-1" routerLink="auth">Sign-In</a>
-      <button class="btn btn-outline-warning btn-sm m-1" routerLink="register">Sign-Up</button>
-
-      <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-        <div class="btn-group" role="group">
-          <button id="btnGroupDrop1" type="button" class="btn btn-sm btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            User Name
-          </button>
-          <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-            <a class="dropdown-item" href="#">View profile</a>
-            <a class="dropdown-item" href="#">Settings</a>
-          </div>
-        </div>
-      </div>
-      <button class="btn btn-outline-success btn-sm m-1">Sign-Out</button>
-    </span>
-  </div>
-</nav>
 <router-outlet></router-outlet>
