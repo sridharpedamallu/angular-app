@@ -10,6 +10,26 @@
                 Back To Dashboard <span class="sr-only">(current)</span>
               </a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/admin/topics">
+                Topics
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/admin/sub-topics">
+                Sub Topics
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/admin/practice-questions">
+                Practice Questions
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/admin/exam-questions">
+                Exam Questions
+              </a>
+            </li>
           </ul>
           <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
             <span>Saved reports</span>
@@ -49,11 +69,11 @@
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
-        <h1 class="h2"><i class="fas fa-book"></i> Courses</h1>
+        <h1 class="h2">Topics</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group mr-2">
             <button type="button" class="btn btn-sm btn-outline-primary"
-              data-toggle="modal" data-target="#courseModal"><i title="View" class="fas fa-plus"></i>
+              data-toggle="modal" data-target="#detailsModal">
               Add New</button>
           </div>
         </div>
@@ -67,7 +87,7 @@
               <th>Header</th>
               <th>Header</th>
               <th>Header</th>
-              <th style="width: 150px;">Actions</th>
+              <th>Header</th>
             </tr>
           </thead>
           <tbody>
@@ -76,55 +96,112 @@
               <td>Lorem</td>
               <td>ipsum</td>
               <td>dolor</td>
-              <td>
-                <button class="btn btn-success btn-sm m-1"><i title="View" class="fas fa-id-badge"></i></button>
-                <button class="btn btn-primary btn-sm m-1"><i title="Edit" class="fas fa-id-badge"></i></button>
-                <button class="btn btn-danger btn-sm m-1"><i title="Delete" class="fas fa-trash"></i></button>
-              </td>
+              <td>sit</td>
             </tr>
             <tr>
               <td>1,002</td>
               <td>amet</td>
               <td>consectetur</td>
               <td>adipiscing</td>
-              <td>
-                <button class="btn btn-success btn-sm m-1"><i class="fas fa-id-badge"></i></button>
-                <button class="btn btn-primary btn-sm m-1"><i class="fas fa-id-badge"></i></button>
-                <button class="btn btn-danger btn-sm m-1"><i class="fas fa-trash"></i></button>
-              </td>
+              <td>elit</td>
             </tr>
             <tr>
               <td>1,003</td>
               <td>Integer</td>
               <td>nec</td>
               <td>odio</td>
-              <td>
-                <button class="btn btn-success btn-sm m-1"><i class="fas fa-id-badge"></i></button>
-                <button class="btn btn-primary btn-sm m-1"><i class="fas fa-id-badge"></i></button>
-                <button class="btn btn-danger btn-sm m-1"><i class="fas fa-trash"></i></button>
-              </td>
+              <td>Praesent</td>
             </tr>
             <tr>
               <td>1,003</td>
               <td>libero</td>
               <td>Sed</td>
               <td>cursus</td>
-              <td>
-                <button class="btn btn-success btn-sm m-1"><i class="fas fa-id-badge"></i></button>
-                <button class="btn btn-primary btn-sm m-1"><i class="fas fa-id-badge"></i></button>
-                <button class="btn btn-danger btn-sm m-1"><i class="fas fa-trash"></i></button>
-              </td>
+              <td>ante</td>
             </tr>
             <tr>
               <td>1,004</td>
               <td>dapibus</td>
               <td>diam</td>
               <td>Sed</td>
-              <td>
-                <button class="btn btn-success btn-sm m-1"><i class="fas fa-id-badge"></i></button>
-                <button class="btn btn-primary btn-sm m-1"><i class="fas fa-id-badge"></i></button>
-                <button class="btn btn-danger btn-sm m-1"><i class="fas fa-trash"></i></button>
-              </td>
+              <td>nisi</td>
+            </tr>
+            <tr>
+              <td>1,005</td>
+              <td>Nulla</td>
+              <td>quis</td>
+              <td>sem</td>
+              <td>at</td>
+            </tr>
+            <tr>
+              <td>1,006</td>
+              <td>nibh</td>
+              <td>elementum</td>
+              <td>imperdiet</td>
+              <td>Duis</td>
+            </tr>
+            <tr>
+              <td>1,007</td>
+              <td>sagittis</td>
+              <td>ipsum</td>
+              <td>Praesent</td>
+              <td>mauris</td>
+            </tr>
+            <tr>
+              <td>1,008</td>
+              <td>Fusce</td>
+              <td>nec</td>
+              <td>tellus</td>
+              <td>sed</td>
+            </tr>
+            <tr>
+              <td>1,009</td>
+              <td>augue</td>
+              <td>semper</td>
+              <td>porta</td>
+              <td>Mauris</td>
+            </tr>
+            <tr>
+              <td>1,010</td>
+              <td>massa</td>
+              <td>Vestibulum</td>
+              <td>lacinia</td>
+              <td>arcu</td>
+            </tr>
+            <tr>
+              <td>1,011</td>
+              <td>eget</td>
+              <td>nulla</td>
+              <td>Class</td>
+              <td>aptent</td>
+            </tr>
+            <tr>
+              <td>1,012</td>
+              <td>taciti</td>
+              <td>sociosqu</td>
+              <td>ad</td>
+              <td>litora</td>
+            </tr>
+            <tr>
+              <td>1,013</td>
+              <td>torquent</td>
+              <td>per</td>
+              <td>conubia</td>
+              <td>nostra</td>
+            </tr>
+            <tr>
+              <td>1,014</td>
+              <td>per</td>
+              <td>inceptos</td>
+              <td>himenaeos</td>
+              <td>Curabitur</td>
+            </tr>
+            <tr>
+              <td>1,015</td>
+              <td>sodales</td>
+              <td>ligula</td>
+              <td>in</td>
+              <td>libero</td>
             </tr>
           </tbody>
         </table>
@@ -133,13 +210,12 @@
   </div>
 </div>
 
-
 <!-- Modal -->
 <div class="modal fade" id="courseModal" tabindex="-1" aria-labelledby="courseModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content p-1">
       <div class="modal-header bg-primary text-white">
-        <h5 class="modal-title" id="courseModalLabel">Course Details</h5>
+        <h5 class="modal-title" id="courseModalLabel">Topics</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

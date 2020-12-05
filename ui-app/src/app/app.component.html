@@ -1,4 +1,5 @@
 
-<app-header *ngIf="isAuth()"></app-header>
+<app-header (changeTheme)="changeTheme($event)" *ngIf="isAuth()"></app-header>
 
 <router-outlet></router-outlet>
+

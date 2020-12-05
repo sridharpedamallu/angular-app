@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject } from '@angular/core';
 import { AuthService } from './services/auth.service';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -11,8 +11,35 @@ import { Observable } from 'rxjs';
 export class AppComponent {
   title = 'ui-app';
 
-  constructor(public authService: AuthService) {
+  lightStyle = './assets/css/blue/bootstrap.min.css';
+  darkStyle = './assets/css/dark/bootstrap.min.css';
+
+  constructor(
+    public authService: AuthService,
+    @Inject(DOCUMENT) private document
+  ) {
+    this.assignTheme(this.lightStyle);
   }
+
+  changeTheme(theme) {
+    if (theme === 'dark') {
+      this.assignTheme(this.darkStyle);
+    } else {
+      this.assignTheme(this.lightStyle);
+    }
+  }
+
+  assignTheme(theme) {
+    const head = this.document.getElementsByTagName('head')[0];
+
+    const style = this.document.createElement('link');
+    style.rel = 'stylesheet';
+    style.href = theme;
+
+    head.appendChild(style);
+  }
+
+
 
   isAuth(): boolean {
     if (localStorage.getItem('token')) {

@@ -2,27 +2,31 @@
   <div class="sidebar-sticky pt-3">
     <ul class="nav flex-column">
       <li class="nav-item">
-        <a class="nav-link active" href="#">
-          <span data-feather="home"></span>
-          Admin Dashboard <span class="sr-only">(current)</span>
+        <a class="nav-link" routerLink="franchise">
+          <i class="fas fa-archway"></i> Fanchises
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="courses">
+          <i class="fas fa-book"></i> Courses
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="admin-student">
           <span data-feather="file"></span>
-          Courses
+          Students
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">
-          <span data-feather="shopping-cart"></span>
-          Products
+        <a class="nav-link" routerLink="topics">
+          <span data-feather="file"></span>
+          Question Admin
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">
-          <span data-feather="users"></span>
-          Customers
+        <a class="nav-link" routerLink="users">
+          <span data-feather="file"></span>
+          User Admin
         </a>
       </li>
       <li class="nav-item">
@@ -68,6 +72,24 @@
         <a class="nav-link" href="#">
           <span data-feather="file-text"></span>
           Year-end sale
+        </a>
+      </li>
+    </ul>
+
+    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+      <span>Favourites</span>
+    </h6>
+    <ul class="nav flex-column mb-2">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/admin/practice-questions">
+          <span data-feather="file-text"></span>
+          Practice Questions
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/admin/exam-questions">
+          <span data-feather="file-text"></span>
+          Exam Questions
         </a>
       </li>
     </ul>

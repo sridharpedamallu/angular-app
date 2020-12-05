@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
+import { Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,6 +8,10 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+
+  @Output() changeTheme = new EventEmitter<string>();
+
+  theme = 'light';
 
   constructor( public authService: AuthService ) {}
 
@@ -19,6 +24,10 @@ export class HeaderComponent implements OnInit {
 
   getUserType() {
     return localStorage.getItem('userType');
+  }
+
+  selectTheme(e) {
+    this.changeTheme.emit(e.target.value);
   }
 
 }
