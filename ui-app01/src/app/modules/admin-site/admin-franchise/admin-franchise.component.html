@@ -1,0 +1,51 @@
+<p-sidebar
+  [(visible)]="display"
+  appendTo="body"
+  baseZIndex="999"
+  [style]="{width:'80%'}"
+  [showCloseIcon]="false"
+  position="right"
+  [blockScroll]="true"
+  (onHide)="showMessage()"
+  >
+  <app-manage-frachise [franchise]="selectedFranchise"></app-manage-frachise>
+</p-sidebar>
+<div class="container-fluid" style="padding: 2%;">
+  <h3 class="h3 text-primary">
+    <i class="pi pi-th-large pr-1" style="font-size: 1.5rem"></i>
+    Franchises</h3>
+  <div class="table-responsive">
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th style="width: 150px;"></th>
+          <th>#</th>
+          <th>Title</th>
+          <th>State</th>
+          <th>No of Students</th>
+          <th>No of Batches</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let franchise of data">
+          <td>
+            <button pButton pRipple type="button" (click)="openView(franchise)" icon="pi pi-pencil"
+              class="p-button-rounded p-button-text p-button-sm"></button>
+            <button pButton pRipple type="button" icon="pi pi-bookmark"
+              class="p-button-rounded p-button-secondary p-button-text p-button-sm"></button>
+            <button pButton pRipple type="button" icon="pi pi-search"
+              class="p-button-rounded p-button-success p-button-text p-button-sm"></button>
+          </td>
+          <td>{{franchise.id}}</td>
+          <td>{{franchise.title}}</td>
+          <td>{{franchise.state}}</td>
+          <td>{{franchise.noOfStudents}}</td>
+          <td>{{franchise.noOfBatches}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+

@@ -1,0 +1,252 @@
+<div class="container-fluid vh-100" style="overflow-x: hidden;">
+
+
+
+<div class="card">
+  <p-tabView>
+      <p-tabPanel header="Header I" leftIcon="pi pi-calendar" tooltip="1972">
+        <div class="row">
+          <div class="col-6">
+            <div class="card shadow">
+              <div class="card-header text-white bg-primary">
+                Manage Franchise
+              </div>
+              <div class="card-body">
+                <span class="float-right">
+                  <button *ngIf="!editMode" class="btn btn-sm btn-primary m-1" (click)="editMode = !editMode" type="button">
+                    <i class="pi pi-pencil pr-2"></i>Edit</button>
+                  <button *ngIf="editMode" class="btn btn-sm btn-success m-1" (click)="editMode = !editMode" type="button">
+                    <i class="pi pi-save pr-2"></i>Save</button>
+                  <button *ngIf="editMode" class="btn btn-sm btn-danger m-1" (click)="editMode = !editMode" type="button">
+                    <i class="pi pi-times pr-2"></i>Cancel</button>
+                </span>
+                <table *ngIf="franchise" class="table table-hover">
+                  <tbody>
+                    <tr>
+                      <td width="25%">
+                        <div class="p-fluid">
+                          <small>Title :</small><br>
+                          <span *ngIf="!editMode">{{franchise.title}}</span>
+                          <input pInputText class="p-inputtext-sm" *ngIf="editMode" type="text" [value]="franchise.title">
+                        </div>
+                      </td>
+                      <td width="25%">
+                        <div class="p-fluid">
+                          <small>First Name :</small><br>
+                          <span *ngIf="!editMode">{{franchise.firstName}}</span>
+                          <input pInputText class="p-inputtext-sm" *ngIf="editMode" type="text" [value]="franchise.firstName">
+                        </div>
+                      </td>
+                      <td width="25%">
+                        <div class="p-fluid">
+                          <small>Last Name :</small><br>
+                          <span *ngIf="!editMode">{{franchise.lastName}}</span>
+                          <input pInputText class="p-inputtext-sm" *ngIf="editMode" type="text" [value]="franchise.lastName">
+                        </div>
+                      </td>
+                      <!-- <td width="25%">
+                      <div class="p-fluid">
+                        <small>State :</small><br>
+                        <span *ngIf="!editMode">{{franchise.state}}</span>
+                        <input pInputText class="p-inputtext-sm" *ngIf="editMode" type="text" [value]="franchise.state">
+                      </div>
+                    </td>
+                    <td width="25%">
+                      <div class="p-fluid">
+                        <small>No of Students :</small><br>
+                        {{franchise.noOfStudents}}
+                      </div>
+                    </td>
+                    <td width="25%">
+                      <div class="p-fluid">
+                        <small>Batches :</small><br>
+                        {{franchise.noOfBatches}}
+                      </div>
+                    </td> -->
+                    </tr>
+                    <tr>
+                      <td width="25%">
+                        <div class="p-fluid">
+                          <small>Email :</small><br>
+                          <span *ngIf="!editMode">{{franchise.email}}</span>
+                          <input pInputText class="p-inputtext-sm" *ngIf="editMode" type="text" [value]="franchise.email">
+                        </div>
+                      </td>
+                      <td width="25%">
+                        <div class="p-fluid">
+                          <small>Primary Phone :</small><br>
+                          <span *ngIf="!editMode">{{franchise.primaryPhone}}</span>
+                          <input pInputText class="p-inputtext-sm" *ngIf="editMode" type="text"
+                            [value]="franchise.primaryPhone">
+                        </div>
+                      </td>
+                      <td width="25%">
+                        <div class="p-fluid">
+                          <small>Secondary Phone :</small><br>
+                          <span *ngIf="!editMode">{{franchise.secondaryPhone}}</span>
+                          <input pInputText class="p-inputtext-sm" *ngIf="editMode" type="text"
+                            [value]="franchise.secondaryPhone">
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td width="25%">
+                        <div class="p-fluid">
+                          <small>Adress Line 1 :</small><br>
+                          <span *ngIf="!editMode">{{franchise.addressLine1}}</span>
+                          <input pInputText class="p-inputtext-sm" *ngIf="editMode" type="text"
+                            [value]="franchise.addressLine1">
+                        </div>
+                      </td>
+                      <td width="25%">
+                        <div class="p-fluid">
+                          <small>Address Line 2 :</small><br>
+                          <span *ngIf="!editMode">{{franchise.addressLine2}}</span>
+                          <input pInputText class="p-inputtext-sm" *ngIf="editMode" type="text"
+                            [value]="franchise.addressLine2">
+                        </div>
+                      </td>
+                      <td width="25%">
+                        <div class="p-fluid">
+                          <small>City :</small><br>
+                          <span *ngIf="!editMode">{{franchise.city}}</span>
+                          <input pInputText class="p-inputtext-sm" *ngIf="editMode" type="text" [value]="franchise.city">
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td width="25%">
+                        <div class="p-fluid">
+                          <small>State :</small><br>
+                          <span *ngIf="!editMode">{{franchise.state}}</span>
+                          <input pInputText class="p-inputtext-sm" *ngIf="editMode" type="text" [value]="franchise.state">
+                        </div>
+                      </td>
+                      <td width="25%">
+                        <div class="p-fluid">
+                          <small>Country :</small><br>
+                          <span *ngIf="!editMode">{{franchise.country}}</span>
+                          <input pInputText class="p-inputtext-sm" *ngIf="editMode" type="text" [value]="franchise.country">
+                        </div>
+                      </td>
+                      <td width="25%">
+                        <div class="p-fluid">
+                          <small>Post code :</small><br>
+                          <span *ngIf="!editMode">{{franchise.postcode}}</span>
+                          <input pInputText class="p-inputtext-sm" *ngIf="editMode" type="text" [value]="franchise.postcode">
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="card shadow">
+              <div class="card-header text-white bg-primary">
+                Franchise Activity
+                <button type="button" class="btn btn-primary pl-2" (click)="showTimeline()">
+                  View all
+                </button>
+              </div>
+              <div class="card-body">
+                <ul class="timeline">
+                  <li>
+                    <a target="_blank" href="#">New Batch started</a>
+                    <a href="#" class="float-right">01 Feb, 2021</a>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare. Maecenas placerat facilisis mollis. Duis sagittis ligula in sodales vehicula....</p>
+                  </li>
+                  <li>
+                    <a href="#">SAT exam for Batch ##</a>
+                    <a href="#" class="float-right">28 Jan, 2021</a>
+                    <p>Curabitur purus sem, malesuada eu luctus eget, suscipit sed turpis. Nam pellentesque felis vitae justo accumsan, sed semper nisi sollicitudin...</p>
+                  </li>
+                  <li>
+                    <a href="#">Awesome Employers</a>
+                    <a href="#" class="float-right">1 April, 2014</a>
+                    <p>Fusce ullamcorper ligula sit amet quam accumsan aliquet. Sed nulla odio, tincidunt vitae nunc vitae, mollis pharetra velit. Sed nec tempor nibh...</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row pt-4">
+          <div class="col">
+            <div class="card text-white bg-primary mb-3 shadow" style="max-width: 12rem;">
+              <div class="card-body">
+                <h3 class="h3 card-title">101</h3>
+                <p class="card-text">Registered Student</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card text-white bg-success mb-3 shadow" style="max-width: 12rem;">
+              <div class="card-body">
+                <h3 class="card-title">5</h3>
+                <p class="card-text">Batches</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card text-white bg-danger mb-3 shadow" style="max-width: 12rem;">
+              <div class="card-body">
+                <h3 class="card-title">12</h3>
+                <p class="card-text">Over due payments</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card text-white bg-info mb-3 shadow" style="max-width: 12rem;">
+              <div class="card-body">
+                <h3 class="card-title">5</h3>
+                <p class="card-text">Batches</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row pt-4">
+          <div class="col-4">
+            <div class="card p-0 shadow">
+              <div class="card-header text-white bg-primary">
+                Registrations chart
+              </div>
+              <div class="card-body">
+                <p-chart type="line" [data]="data"></p-chart>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="card p-0 shadow">
+              <div class="card-header text-white bg-primary">
+                Registrations chart
+              </div>
+              <div class="card-body">
+                <p-chart type="line" [data]="data"></p-chart>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="card p-0 shadow">
+              <div class="card-header text-white bg-primary">
+                Registrations chart
+              </div>
+              <div class="card-body">
+                <p-chart type="line" [data]="data"></p-chart>
+              </div>
+            </div>
+          </div>
+        </div>
+      </p-tabPanel>
+      <p-tabPanel header="Header II" rightIcon="pi pi-inbox" tooltip="1974">
+        <app-admin-franchise-timeline></app-admin-franchise-timeline>
+      </p-tabPanel>
+      <p-tabPanel header="Header III" leftIcon="pi pi-user" rightIcon="pi pi-star" tooltip="1990">
+          <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
+                  cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
+                  Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.</p>
+      </p-tabPanel>
+  </p-tabView>
+  </div>
+</div>
